@@ -89,41 +89,38 @@ def is_available(url: bool):
 
 
 data_df = pd.DataFrame()
+
 '''
 Spam
 '''
-# spam_df = pd.read_csv('spam_urls.csv')
+spam_df = pd.read_csv('data/spam_urls.csv')
 
 # storing available urls in a list
 available_urls = []
-# print('\navailable spam urls:')
-# for url in tqdm(spam_df['url']):
-#     if is_available(url):
-#         available_urls.append([url, 'spam'])
+print('\navailable spam urls:')
+for url in tqdm(spam_df['url']):
+    if is_available(url):
+        available_urls.append([url, 'spam'])
 
 '''
 Ham
-'''
-# websites to crawl .ir links from
+# '''
+# websites to crawl links from
 websites = [
-            # 'https://www.farsnews.ir/',
-            # 'https://www.isna.ir/service/Science-Academia',
-            # 'https://laptopdid.ir/articles',
-            # 'https://utype.ir/docs/',
-            # 'https://www.khabaronline.ir/service/Politics',
-            # 'https://virgool.io/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C',
-            # 'https://virgool.io/tag/%D8%B1%D9%88%D8%A7%D9%86%D8%B4%D9%86%D8%A7%D8%B3%DB%8C',
-            # 'https://virgool.io/tag/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C',
-            # 'https://virgool.io/tag/%D8%B7%D9%86%D8%B2',
-            # 'https://www.digikala.com/mag/',
+            'https://www.farsnews.ir/',
+            'https://www.isna.ir/service/Science-Academia',
+            'https://laptopdid.ir/articles',
+            'https://utype.ir/docs/',
+            'https://www.khabaronline.ir/service/Politics',
+            'https://www.digikala.com/mag/',
             'https://www.digikala.com/mag/culture-art/',
             'https://www.digikala.com/mag/literature/',
             'https://www.digikala.com/mag/game/',
-            # 'https://manag.ir/journal/movie/',
-            # 'https://manag.ir/journal/analytic/',
-            # 'https://manag.ir/journal/music/',
-            # 'https://www.offdecor.com/decorplus',
-            # 'https://www.offdecor.com/cook-HJZ174'
+            'https://manag.ir/journal/movie/',
+            'https://manag.ir/journal/analytic/',
+            'https://manag.ir/journal/music/',
+            'https://www.offdecor.com/decorplus',
+            'https://www.offdecor.com/cook-HJZ174'
             ]
 
 # collecting urls
@@ -160,4 +157,4 @@ for row in tqdm(available_urls):
 
 # saving all data in a csv file
 data_df = pd.DataFrame(data, columns=['url', 'context', 'category'])
-data_df.to_csv('dataset5.csv')
+data_df.to_csv('data/data1.csv')

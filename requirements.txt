@@ -1,0 +1,7 @@
+pandas==1.5.3
+numpy==1.23.5
+sklearn==0.0
+requests==2.28.2
+tqdm==4.64.1
+parsivar==0.2.3
+beautifulsoup4==4.12.2
